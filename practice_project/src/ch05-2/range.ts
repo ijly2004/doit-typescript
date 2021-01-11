@@ -1,9 +1,9 @@
 export const range = (from: number, to: number):number[] =>
   from < to ? [from, ...range(from + 1, to)] : []
 
-const range2 = (from: number, to: number):number[] => {
+const rangeTest = (from: number, to: number):number[] => {
   if(from < to) {
-    const recursive = range2(from + 1, to)
+    const recursive = rangeTest(from + 1, to)
     return [from, ...recursive]
   } else {
     return []
@@ -11,5 +11,5 @@ const range2 = (from: number, to: number):number[] => {
 }
   
 
-  const numbers:number[] = range2(1, 5 + 1)
-  // console.log(numbers)
+const numbers:number[] = rangeTest(1, 5 + 1)
+// console.log(numbers)
